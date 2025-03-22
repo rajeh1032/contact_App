@@ -51,7 +51,11 @@ class _DataInputScreenState extends State<DataInputScreen> {
                           border: Border.all(color: AppColors.gold)),
                       child: _image == null
                           ? Image.asset("assets/images/imageadd_icon.png")
-                          : Image.file(_image!, fit: BoxFit.cover),
+                          : Image.file(
+                              _image!,
+                              fit: BoxFit.fill,
+                              width: double.infinity,
+                            ),
                     ),
                   ),
                   SizedBox(width: width * 0.029),
@@ -131,7 +135,7 @@ class _DataInputScreenState extends State<DataInputScreen> {
       userPhone.clear();
       _image = null;
 
-      Navigator.pop(context, newUser); 
+      Navigator.pop(context, newUser);
     }
   }
 
