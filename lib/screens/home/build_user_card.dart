@@ -38,8 +38,8 @@ class BuildUserCard extends StatelessWidget {
           children: [
             Stack(
               children: [
-                userImage.startsWith('assets/')
-                    ? Image.asset(userImage,
+                (userImage.isEmpty|| userImage.startsWith('assets/'))?
+               Image.asset(userImage.isEmpty?"assets/images/person.png":userImage,
                         width: double.infinity,
                         height: height * 0.20,
                         fit: BoxFit.cover)
