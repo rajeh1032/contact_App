@@ -84,6 +84,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   void openDataInputScreen() async {
     final result = await showModalBottomSheet(
+      isScrollControlled: true,
       backgroundColor: AppColors.darkBlue,
       shape: const RoundedRectangleBorder(
         borderRadius: BorderRadius.vertical(top: Radius.circular(30)),
@@ -95,7 +96,6 @@ class _HomeScreenState extends State<HomeScreen> {
     );
 
     if (result != null && result is UserData) {
-     
       setState(() {
         userCardList.add(
           BuildUserCard(
